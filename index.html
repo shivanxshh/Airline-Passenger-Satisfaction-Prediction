@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+      <title>Predict Airline Passenger Satisfaction</title>
+</head>
+<style>
+              body{
+                   background-color:lightblue;
+                   background-image:url("templates/aero.jpg");
+                   background-repeat:no-repeat;
+                   background-attachment:fixed;
+                   background-size:100% 100%;
+
+         </style>
+<style>
+        .button {
+                   background-color:black;
+                   color : red;
+                   text-align:center;
+                   font-size:20px;
+                   padding:20px 25px;
+                   cursor:pointer;
+}
+</style>
+<div>
+       <h1 style="color:white ;background-color:grey; text-align: center; padding:30.0;"><strong><mark><i><u>Airline Passenger Satisfaction Predictor</u></i></mark></strong></h1>
+        <h2 style="color:white;">Let's Roll</h2></h1>
+        <center>
+             <h3  style="white:black ;background-color:white; text-align: center; padding:30.0;"><strong><i><u>Add Values to Predict</u></i></strong></h1>
+         </center>
+         
+        <form action="{{ url_for('predict')}}" method="post">
+         <h1><i class="fa fa-airline fa-2x" aria-hidden="true"></i>Airline Passenger Satisfaction Prediction<i class="fa fa-airline fa-2x" aria-hidden="true"></i></h1>
+    <center>
+         <h2> Your Gender?</h3><select name="Gender"  id="first"  required="required" >
+         <option value="Male">Male</option>
+         <option value="Female">Female</option><br>
+         </select>
+         
+         
+         <h2>What is Customer Type?</h3> <select  name="Customer Type" id="second" required="required" >
+         <option value="Loyal Customer">Loyal Customer</option>
+         <option value="disloyal Customer">disloyal Customer</option><br>
+         </select>
+         
+     
+         <h2> Travel type?</h3>
+         <select id ="third" name="Type of Travel" placeholder ="Type of travel" required="required" >
+         <option value="Personal Travel">Personal Travel</option>
+         <option value="Business travel">Business travel</option><br>
+         </select> 
+         
+            
+         <h2> What is your class?</h3>
+         <select id ="fourth" name="Class" placeholder ="Class" required="required" >
+         <option value="Eco Plus">Eco Plus</option></option>
+         <option value="Business">Business</option>
+         <option value="Eco">Eco</option><br> 
+         </select>
+         
+       
+ 
+         <h2>Rate inflight wifi service?</h3>
+         <input  id ="one" name ="Inflight wifi service" placeholder ="Inflight wifi service" required="required" >
+           
+         <h2>What is departure/arrival time convenient?</h3>
+         <input  id ="two" name ="Departure/Arrival time convenient" placeholder ="Departure/Arrival time convenient" required="required" >
+           
+         <h2> Rate ease of online booking?</h3>
+         <input  id ="three" name ="Ease of Online booking" placeholder ="Ease of Online booking" required="required" >
+           
+         <h2> Gate Location?</h3>
+         <input  id ="four" name ="Gate location" placeholder ="Gate location" required="required" >
+           
+         <h2> Rate Food and drink?</h3>
+         <input  id ="five" name ="Food and drink" placeholder ="Food and drink" required="required" >
+         <h2>Rate online Boarding?</h3>
+         <input  id ="six" name ="Online boarding" placeholder ="Online Boarding" required="required" >
+         
+         
+         <h2> Rate seat comfort?</h3>
+         <input  id ="seven" name ="Seat comfort" placeholder ="Seat comfort" required="required" >
+         
+         
+         
+         
+         
+         <h2>Rate inflight entertainment?</h3>
+         <input  id ="eight" name ="Inflight entertainment" placeholder ="Inflight entertainment" required="required" >
+         <h2>How's the on-board service?</h3>
+         <input  id ="nine" name ="On-board service" placeholder ="On-board service" required="required" >
+         <h2> Leg Room service?</h3>
+         <input  id ="ten" name ="Leg room service" placeholder ="Leg room service" required="required" >
+         
+         <h2> How was baggage handling?</h3>
+         <input  id ="eleven" name ="Baggage handling" placeholder ="Baggage handling" required="required" >
+         <h2> How was check-in service?</h3>
+         <input  id ="twelve" name ="Checkin service" placeholder ="Checkin service" required="required" >
+         <h2> How's the inflight service?</h3>
+         <input  id ="thirteen" name ="Inflight service" placeholder ="Inflight service" required="required" >
+         <h2> Rate Cleanliness?</h3>
+         <input  id ="forteen" name ="Cleanliness" placeholder ="Cleanliness" required="required" >
+       
+         <h2> What is your age?</h3>
+         <input  id ="umar" name ="Age" placeholder ="Age" required="required" >
+         
+          
+         <h2> Distance covered by flight?(like 460,235 etc.)</h3>
+         <input  id ="duri" name="Flight Distance" placeholder ="Flight Distance" required="required" >
+             
+            
+         <h2> Departure delay?(in minutes)</h3>
+         <input id ="vakt" name="Departure Delay in Minutes" placeholder ="Departure Delay in minutes" required="required" >
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  </center>
+
+         <br><br><br>
+<center>
+            <button class="button"  type="submit">Predict</button>
+</center>
+        </form>
+
+     <br>
+     <br>
+      <h2>{{ prediction_text }}</h2>
+
+</div>
+</body>
+</html>
